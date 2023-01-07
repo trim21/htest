@@ -1,7 +1,7 @@
 # htest
 
 
-Chainable light-weight test client for golang `http.Handler`
+Chainable light-weight http client for testing golang `http.Handler`
 
 ```golang
 package main_test
