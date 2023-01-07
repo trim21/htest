@@ -1,5 +1,6 @@
 # htest
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/trim21/htest.svg)](https://pkg.go.dev/github.com/trim21/htest)
 
 Chainable light-weight http client for testing golang `http.Handler`
 
