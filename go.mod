@@ -3,8 +3,7 @@ module github.com/trim21/htest
 go 1.25.0
 
 require (
-	github.com/labstack/echo/v4 v4.15.0
-	github.com/labstack/echo/v5 v5.0.3
+	github.com/labstack/echo/v4 v4.15.1
 	github.com/stretchr/testify v1.11.1
 )
 
