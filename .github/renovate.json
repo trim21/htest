@@ -4,6 +4,8 @@
     "local>Trim21/renovate-config",
     "local>Trim21/renovate-config:monthly"
   ],
+  "labels": ["ci:auto-merge", "dependencies"],
+  "rebaseWhen": "conflicted",
   "separateMinorPatch": false,
   "separateMajorMinor": true,
   "separateMultipleMajor": true,
