@@ -19,7 +19,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v5"
 	"github.com/stretchr/testify/require"
 
 	"github.com/trim21/htest"
@@ -34,7 +34,7 @@ func TestClientFullExample(t *testing.T) {
 	t.Parallel()
 	app := echo.New()
 
-	app.GET("/test", func(c echo.Context) error {
+	app.GET("/test", func(c *echo.Context) error {
 		return c.JSON(http.StatusOK, res{I: 5, Q: c.QueryParam("q")})
 	})
 
@@ -53,7 +53,7 @@ func TestPathWithQuery(t *testing.T) {
 	t.Parallel()
 	app := echo.New()
 
-	app.GET("/test", func(c echo.Context) error {
+	app.GET("/test", func(c *echo.Context) error {
 		return c.JSON(http.StatusOK, res{I: 5, Q: c.QueryParam("q")})
 	})
 
@@ -66,8 +66,8 @@ func TestForm(t *testing.T) {
 	t.Parallel()
 
 	app := echo.New()
-	app.POST("/", func(c echo.Context) error {
-		form, err := c.FormParams()
+	app.POST("/", func(c *echo.Context) error {
+		form, err := c.FormValues()
 		require.NoError(t, err)
 
 		return c.JSON(http.StatusOK, res{Q: form.Get("q")})
@@ -87,7 +87,7 @@ func TestJSON(t *testing.T) {
 	t.Parallel()
 
 	app := echo.New()
-	app.POST("/", func(c echo.Context) error {
+	app.POST("/", func(c *echo.Context) error {
 		var r json.RawMessage
 		err := json.NewDecoder(c.Request().Body).Decode(&r)
 		require.NoError(t, err)
